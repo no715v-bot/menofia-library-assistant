@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Library Assistant - Menofia University</title>
+    <!-- Importing fonts: Lora/Inter for English, Cairo for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Doodles -->
+    <div class="doodle-bg doodle-1">📖</div>
+    <div class="doodle-bg doodle-2">✎</div>
+    <div class="doodle-bg doodle-3">★</div>
+    <div class="doodle-bg doodle-4">💡</div>
+    <div class="doodle-bg doodle-5">📜</div>
+    <div class="doodle-bg doodle-6">👓</div>
+    <div class="doodle-bg doodle-7">💡</div>
+    <div class="doodle-bg doodle-8">🌿</div>
+
+    <!-- Intro Screen -->
+    <div id="intro-screen">
+        <img src="image_39c7c1.png" alt="Menofia University Faculty of Veterinary Medicine Logo" class="intro-logo" onerror="this.style.display='none';">
+        
+        <div class="intro-content">
+            <h1 id="alt-logo-text" style="display:none; margin-bottom:20px; color:var(--primary-color);">Faculty of Veterinary Medicine</h1>
+            
+            <h2 class="intro-title" id="txt-intro-title">AI Library Assistant</h2>
+            <p class="intro-subtitle" id="txt-intro-sub">Menofia University</p>
+
+            <div class="credits-box">
+                <div class="supervision-label" id="txt-sup-label">Under the Supervision of</div>
+                <div class="supervisor-name" id="txt-sup-name">Prof. Dr. Rida Mohamed Tawfik</div>
+                
+                <div class="other-credits">
+                    <span id="txt-fac-name">Faculty of Veterinary Medicine</span>
+                    <span id="txt-uni-name">Menofia University</span>
+                </div>
+            </div>
+
+            <button class="start-btn" id="start-app-btn">
+                <span id="txt-start-btn">Enter Library Assistant</span>
+            </button>
+
+            <!-- Language Button (Animated below Enter button) -->
+            <button id="intro-lang-btn" class="intro-lang-btn">عربي</button>
+        </div>
+    </div>
+
+    <!-- Main App Interface -->
+    <div id="app-interface">
+        <header>
+            <div class="logo-area">
+                <span class="logo-icon">📚</span>
+                <h1 id="txt-header-title">AI Library Assistant</h1>
+            </div>
+            <div class="header-controls">
+                <button id="header-lang-btn" class="header-lang-btn">عربي</button>
+                <button id="info-btn" class="icon-btn" title="About / Intro">ℹ️</button>
+                <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+            </div>
+        </header>
+
+        <div id="chat-container">
+            <div class="message bot">
+                <div class="avatar bot-avatar">🤓</div>
+                <div class="bubble" id="txt-welcome">
+                    Hello! I am your AI Library Assistant. <br><br>
+                    I can help you find book recommendations, summarize stories, or explain library classification systems. Please check the settings ⚙️ to configure your API key!
+                </div>
+            </div>
+            <div class="typing-indicator" id="loader">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <div class="quick-actions" id="quick-actions-container">
+                <!-- Action buttons generated dynamically based on language -->
+                <button class="action-btn" data-action="surprise" id="btn-surprise">✨ Surprise Read</button>
+                <button class="action-btn" data-action="quiz" id="btn-quiz">✨ Lit Quiz</button>
+                <button class="action-btn" data-action="poem" id="btn-poem">✨ Write Poem</button>
+                <button class="action-btn" data-action="quote" id="btn-quote">✨ Quote</button>
+            </div>
+
+            <div class="input-wrapper">
+                <input type="text" id="user-input" placeholder="Ask for a book recommendation..." autocomplete="off">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="txt-settings-title">Settings</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-row">
+                    <div>
+                        <div class="setting-label" id="txt-dev-opt">Developer Options</div>
+                        <div class="setting-desc" id="txt-dev-desc">Enable advanced configuration</div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="dev-mode-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+                <div id="api-section" class="api-section">
+                    <label for="api-key-input" id="txt-api-label">Gemini API Key</label>
+                    <div class="api-input-wrapper">
+                        <input type="password" id="api-key-input" placeholder="Paste key here..." title="Your key is stored locally in your browser">
+                    </div>
+                    <div class="setting-desc" id="txt-api-desc">Your key is stored locally in your browser.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
